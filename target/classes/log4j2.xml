@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <!-- <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level - %msg%n" />-->
+            <!-- <PatternLayout pattern="%sn %d{yyyy/MM/dd HH:mm:ss,SSS} %r [%-6p] [%t] %c{3} %C{3}.%M(%F:%L) – %m%n"/>-->
+        </Console>
+        <File name="File" fileName="${sys:logFile}" append="true">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level - %msg%n</Pattern>
+            </PatternLayout>
+        </File>
+    </Appenders>
+    <Loggers>
+        <Logger name="ua.edu.electives.my" level="DEBUG">
+            <AppenderRef ref="Console"/>
+        </Logger>
+        <Root level="INFO">
+            <AppenderRef ref="File"/>
+        </Root>
+    </Loggers>
+</Configuration>

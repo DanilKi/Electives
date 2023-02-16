@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+
+    <Resource name="jdbc/ConnectionPool"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="root"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/electivesdb?autoReconnect=true"
+              defaultAutoCommit="false"
+              defaultTransactionIsolation="READ_COMMITTED"
+              maxTotal="20"
+              maxIdle="10"
+              maxWaitMillis="10000"
+              validationQuery="select 1"
+    />
+
+</Context>
+        <!--  maxActive="10"-->
