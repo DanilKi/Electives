@@ -34,7 +34,8 @@ CREATE TABLE course (
 	topic_id INT NOT NULL,
 	teacher_id INT NOT NULL,
 	description VARCHAR(255) DEFAULT NULL,
-	FOREIGN KEY (topic_id) REFERENCES topic (id) ON DELETE CASCADE)
+	CONSTRAINT date_chk CHECK (start_date < end_date),
+	FOREIGN KEY (topic_id) REFERENCES topic (id) ON DELETE CASCADE,
 	FOREIGN KEY (teacher_id) REFERENCES user (id) ON DELETE CASCADE)
 ENGINE=InnoDB;
 
